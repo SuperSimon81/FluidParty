@@ -98,7 +98,7 @@ namespace FluidParty
             float[] vy0 = this.vy0;
             float[] s = this.s;
             float[] density = this.density;
-
+            
             diffuse(1, vx0, vx, visc, dt, iter);
             diffuse(2, vy0, vy, visc, dt, iter);
 
@@ -111,8 +111,26 @@ namespace FluidParty
 
             diffuse(0, s, density, diff, dt, iter);
             advect(0, density, s, vx, vy, dt);
+            fade();
             vorticity_confinement(vorticity);
         }
+
+
+        public void fade()
+        {
+            for (int i = 0; i < density.Length; i++)
+            {
+
+
+
+                density[i] -= density[i] / 200;
+
+            }
+        }
+
+
+        
+
 
         public void addDensity(int x, int y, float amount)
         {
