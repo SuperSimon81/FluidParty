@@ -38,13 +38,7 @@ public class ColorHeatMap
                 Color.FromArgb(Alpha, 0xFF, 0xFF, 0) ,//yellow
                 Color.FromArgb(Alpha, 0xFF, 0x7F, 0), //orange 
                 Color.FromArgb(Alpha, 0xFF, 0, 0),
-                Color.FromArgb(Alpha, 0x94, 0, 0xD3) ,//violet
-                Color.FromArgb(Alpha, 0x4B, 0, 0x82) ,//indigo
-                Color.FromArgb(Alpha, 0, 0, 0xFF) ,//blue
-                Color.FromArgb(Alpha, 0, 0xFF, 0) ,//green
-                Color.FromArgb(Alpha, 0xFF, 0xFF, 0) ,//yellow
-                Color.FromArgb(Alpha, 0xFF, 0x7F, 0), //orange 
-                Color.FromArgb(Alpha, 0xFF, 0, 0)
+               Color.FromArgb(Alpha, 0, 0, 0) //Black
 
             });
 

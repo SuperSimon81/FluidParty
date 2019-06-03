@@ -119,7 +119,7 @@ namespace FluidParty
                     {
                         x = (float)(i - (float)(size / 2));
                         y = (float)(j - (float)(size / 2));
-                        pen = new Pen(cmap.GetColorForValue(Math.Min(255,bitm[i,j] ), 255, 0));
+                        pen = new Pen(cmap.GetColorForValue(Math.Min(255,bitm[i,j]%255 ), 255, 0));
                         if (bitm[i,j]>0) gr.DrawRectangle(pen, i, j, 1, 1);
 
                         // if (i>5&&i<bm.Width-5&&j>5&&j<bm.Height-5)fluid.addVelocity(i, j, (float)(RandomNumber(-1, 2) / 8), (float)(RandomNumber(-1, 2)/8) );
