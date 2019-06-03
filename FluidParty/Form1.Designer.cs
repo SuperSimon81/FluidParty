@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -65,6 +66,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.trackBar3);
             this.splitContainer1.Panel1.Controls.Add(this.trackBar2);
             this.splitContainer1.Panel1.Controls.Add(this.trackBar1);
+            this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             // 
             // splitContainer1.Panel2
@@ -90,7 +92,7 @@
             this.trackBar5.Name = "trackBar5";
             this.trackBar5.Size = new System.Drawing.Size(349, 69);
             this.trackBar5.TabIndex = 3;
-            this.trackBar5.Value = 666;
+            this.trackBar5.Value = 800;
             // 
             // trackBar4
             // 
@@ -132,7 +134,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Flip";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -153,6 +155,16 @@
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(111, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Flip ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -189,6 +201,7 @@
         private System.Windows.Forms.TrackBar trackBar4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar trackBar5;
+        private System.Windows.Forms.Button button2;
     }
 }
 

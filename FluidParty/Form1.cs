@@ -12,7 +12,7 @@ namespace FluidParty
 {
     public partial class Form1 : Form
     {
-        static int size=200;
+        static int size=150;
         Fluid fluid; 
         Bitmap bm = new Bitmap(size, size);
         Pen pen;
@@ -21,7 +21,7 @@ namespace FluidParty
         int[,] bitm = new int[size, size];
         int counter = 0;
         double timer;
-        int sign = 1;
+        int sign = 1,sign2 = 1;
         Point randpos;
             Point lastposition = new Point(0, 0);
 
@@ -104,10 +104,16 @@ namespace FluidParty
                 //fluid.addVelocity(randpos.Y, randpos.Y, RandomNumber(-10,10) , RandomNumber(-10, 10));
 
                 //fluid.addVelocity(randpos.Y, randpos.Y, 0 , trackBar3.Value);
-                fluid.addDensity(size / 2, size / 2, trackBar2.Value * 5);
                 //fluid.addVelocity(size / 2, size / 3, 0, trackBar3.Value);
                 ////            fluid.addVelocity(size / 2, size / 2, (float)RandomNumber(-50,50), (float)RandomNumber(-50, 50));
-                            fluid.addVelocity(size / 2 , size / 2 , (float)(trackBar3.Value*Math.Cos(timer*sign)), (float)(trackBar3.Value * Math.Sin(timer* sign)));
+                fluid.addDensity(size / 2, size / 2, trackBar2.Value * 2 * ((float)Math.Cos(timer * 2) + 1));
+
+                fluid.addVelocity(size / 2 , size / 2-1 , (float)(trackBar3.Value*Math.Cos(timer*sign)*Math.Cos(timer /3) + 1), (float)(trackBar3.Value * Math.Sin(timer* sign)));
+
+
+                //fluid.addDensity(size / 2, size / 2, trackBar2.Value * 2 * ((float)Math.Cos(timer * 2) + 1));
+
+                fluid.addVelocity(size / 2, size / 2+1, (float)(trackBar3.Value * Math.Cos(timer * sign+3.14f) * Math.Cos(timer / 7) + 1), (float)(trackBar3.Value * Math.Sin(timer * sign+3.14f)));
 
             }
             fluid.step(trackBar1.Value);
@@ -127,7 +133,7 @@ namespace FluidParty
                         if (bitm[i,j]>0) gr.DrawRectangle(pen, i, j, 1, 1);
 
                         // if (i>5&&i<bm.Width-5&&j>5&&j<bm.Height-5)fluid.addVelocity(i, j, (float)(RandomNumber(-1, 2) / 8), (float)(RandomNumber(-1, 2)/8) );
-                        if (i>1&&i<bm.Width-1&&j>1&&j<bm.Height-1)fluid.addVelocity(i, j, (-y/3000)-x/3000, x/3000-y/ 3000);
+                        if (i>1&&i<bm.Width-1&&j>1&&j<bm.Height-1)fluid.addVelocity(i, j, sign2*(-y/3000)-x/3000, sign2*(x/3000)-y/ 3000);
                         //if(i > 1 && i < bm.Width - 1 && j > 1 && j < bm.Height - 1)fluid.addVelocity(i, j, (float)(Math.Pow(y,3) + 9*y)/10000, (float)(Math.Pow(x, 3)+9*x )/1000);
 
                     }
@@ -157,11 +163,19 @@ namespace FluidParty
 
             }
             else
-            { 
-            //fluid.addVelocity(pos.X, pos.Y, (float)(RandomNumber(-1, 2) * 20), (float)(RandomNumber(-1, 2) * 20));
+            {
+                Point difference = e.Location - (Size)lastposition;
+                //if (pos.X > 1 && pos.X < bm.Width - 1 && pos.Y > 1 && pos.Y < bm.Height - 1) fluid.addVelocity(pos.X, pos.Y, (float)(RandomNumber(-1, 2) * 50), (float)(RandomNumber(-1, 2) * 50));
+                if (pos.X > 1 && pos.X < bm.Width - 1 && pos.Y > 1 && pos.Y < bm.Height - 1) fluid.addVelocity(pos.X, pos.Y, difference.X, difference.Y);
+
             }
             //fluid.addDensity(pos.X, pos.Y, 50);
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            sign2 *= -1;
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)

@@ -1,0 +1,10 @@
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\bin\x64\Release\FluidParty.exe.config
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\bin\x64\Release\FluidParty.exe
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\bin\x64\Release\FluidParty.pdb
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\obj\x64\Release\FluidParty.csprojAssemblyReference.cache
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\obj\x64\Release\FluidParty.Form1.resources
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\obj\x64\Release\FluidParty.Properties.Resources.resources
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\obj\x64\Release\FluidParty.csproj.GenerateResource.cache
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\obj\x64\Release\FluidParty.csproj.CoreCompileInputs.cache
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\obj\x64\Release\FluidParty.exe
+C:\Users\Smion\Documents\GitHub\FluidParty\FluidParty\obj\x64\Release\FluidParty.pdb
