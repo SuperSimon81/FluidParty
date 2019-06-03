@@ -1,0 +1,16 @@
+
+*.exe
+FluidParty/bin/Debug/FluidParty.exe.config
+FluidParty/bin/Debug/FluidParty.pdb
+FluidParty/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+FluidParty/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+FluidParty/obj/Debug/FluidParty.csproj.CoreCompileInputs.cache
+FluidParty/obj/Debug/FluidParty.csproj.FileListAbsolute.txt
+FluidParty/obj/Debug/FluidParty.csproj.GenerateResource.cache
+FluidParty/obj/Debug/FluidParty.csprojAssemblyReference.cache
+FluidParty/obj/Debug/FluidParty.Form1.resources
+FluidParty/obj/Debug/FluidParty.pdb
+FluidParty/obj/Debug/FluidParty.Properties.Resources.resources
+FluidParty/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+FluidParty/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+FluidParty/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
