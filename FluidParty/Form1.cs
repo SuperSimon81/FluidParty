@@ -12,7 +12,7 @@ namespace FluidParty
 {
     public partial class Form1 : Form
     {
-        static int size=150;
+        static int size=200;
         Fluid fluid; 
         Bitmap bm = new Bitmap(size, size);
         Pen pen;
@@ -37,13 +37,17 @@ namespace FluidParty
 
         public Form1()
         {
-            fluid = new Fluid(0.00000001f, 0.000000000f, 0.003f, size, size, 1);
+            fluid = new Fluid(0.00000000f, 0.000000000f, 0.003f, size, size, 1);
             InitializeComponent();
             //timer1.Interval = 1;
             pictureBox1.Image = bm;
 
+            using (Graphics gr = Graphics.FromImage(bm))
+            {
 
-            timer1.Enabled = true;
+                gr.Clear(Color.Black);
+            }
+                timer1.Enabled = true;
         }
         
         public float RandomNumberPerl(int x,int y)
@@ -112,7 +116,7 @@ namespace FluidParty
             using (Graphics gr = Graphics.FromImage(bm))
             {
                 
-                gr.Clear(Color.Black);
+                //gr.Clear(Color.Black);
                 for (int j = 0; j < bm.Height; j++)
                 {
                     for (int i = 0; i < bm.Width; i++)
@@ -123,7 +127,7 @@ namespace FluidParty
                         if (bitm[i,j]>0) gr.DrawRectangle(pen, i, j, 1, 1);
 
                         // if (i>5&&i<bm.Width-5&&j>5&&j<bm.Height-5)fluid.addVelocity(i, j, (float)(RandomNumber(-1, 2) / 8), (float)(RandomNumber(-1, 2)/8) );
-                        if (i>5&&i<bm.Width-5&&j>5&&j<bm.Height-5)fluid.addVelocity(i, j, (-y/3000)-x/3000, x/3000-y/ 3000);
+                        if (i>1&&i<bm.Width-1&&j>1&&j<bm.Height-1)fluid.addVelocity(i, j, (-y/3000)-x/3000, x/3000-y/ 3000);
                         //if(i > 1 && i < bm.Width - 1 && j > 1 && j < bm.Height - 1)fluid.addVelocity(i, j, (float)(Math.Pow(y,3) + 9*y)/10000, (float)(Math.Pow(x, 3)+9*x )/1000);
 
                     }
