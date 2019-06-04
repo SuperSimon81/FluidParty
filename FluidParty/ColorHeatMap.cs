@@ -42,6 +42,14 @@ public class ColorHeatMap
 
             });
 
+            //ColorsOfMap.AddRange(new Color[]{
+            //    Color.FromArgb(Alpha, 0, 0, 0), // Black
+            //    Color.FromArgb(Alpha, 0xFF, 0, 0), //Red
+            //     Color.FromArgb(Alpha, 0xFF, 0xFF, 0xFF),// White
+
+
+            //});
+
         }
 
         public Color GetColorForValue(double val, double maxVal,double minVal)

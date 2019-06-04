@@ -97,7 +97,7 @@ namespace FluidParty
             timer += 0.07f ;
             timer = timer % 6.28;
            
-            label1.Text = timer.ToString();
+            
            // if (timer > 3.14f)
             {
                 //fluid.addDensity(randpos.X, randpos.X, trackBar2.Value * 5);
@@ -116,7 +116,7 @@ namespace FluidParty
                 fluid.addVelocity(size / 2, size / 2+1, (float)(trackBar3.Value * Math.Cos(timer * sign+3.14f) * Math.Cos(timer / 7) + 1), (float)(trackBar3.Value * Math.Sin(timer * sign+3.14f)));
 
             }
-            fluid.step(trackBar1.Value);
+            fluid.step(trackBar1.Value,checkBox1.Checked);
             bitm = fluid.renderToInt();
             float x, y;
             using (Graphics gr = Graphics.FromImage(bm))

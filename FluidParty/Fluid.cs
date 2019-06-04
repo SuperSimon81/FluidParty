@@ -87,7 +87,7 @@ namespace FluidParty
 
         }
 
-       public void step(float vorticity)
+       public void step(float vorticity, bool vort)
         {
             float visc = this.visc;
             float diff = this.diff;
@@ -112,7 +112,7 @@ namespace FluidParty
             diffuse(0, s, density, diff, dt, iter);
             advect(0, density, s, vx, vy, dt);
             fade();
-            vorticity_confinement(vorticity);
+            if(vort) vorticity_confinement(vorticity);
         }
 
 
@@ -240,10 +240,11 @@ namespace FluidParty
             }
             for (int i = 1; i < NX - 1; i++)
             {
-                x[IX(i, 0)] = b == 2 ? -x[IX(i, 1)] : x[IX(i, 1)];
+                x[IX(i, 0)] = b == 2 ? -x[IX(i, 1)] :  x[IX(i, 1)];
                 x[IX(i, NY - 1)] = b == 2 ? -x[IX(i, NY - 1)] : x[IX(i, NY - 1)];
             }
-            x[IX(0, 0)] = 0.5f * (x[IX(1, 0)] + x[IX(0, 1)]);
+
+            x[IX(0, 0)] =   0.5f * (x[IX(1, 0)] + x[IX(0, 1)]);
             x[IX(0, NY - 1)] = 0.5f * (x[IX(1, NY - 1)] + x[IX(0, NY - 1)]);
             x[IX(NX - 1, 0)] = 0.5f * (x[IX(NX - 2, 0)] + x[IX(NX - 1, 1)]);
             x[IX(NX - 1, NY - 1)] = 0.5f * (x[IX(NX - 2, NY - 1)] + x[IX(NX - 1, NY - 2)]);
@@ -294,8 +295,8 @@ namespace FluidParty
                     p[IX(i, j)] = 0;
                 }
             }
-            set_bnd(0, div);
-            set_bnd(0, p);
+           set_bnd(0, div);
+           set_bnd(0, p);
             lin_solve(0, p, div, 1, 6, iter);
 
             for (int j = 1; j < NY - 1; j++)

@@ -1,5 +1,6 @@
 
 *.exe
+*.suo
 FluidParty/bin/Debug/FluidParty.exe.config
 FluidParty/bin/Debug/FluidParty.pdb
 FluidParty/obj/Debug/DesignTimeResolveAssemblyReferences.cache
